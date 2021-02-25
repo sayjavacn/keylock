@@ -1,6 +1,6 @@
 package cn.sayjava.keylock.aspect;
 
-import cn.sayjava.keylock.annotation.AutoLock;
+import cn.sayjava.keylock.annotation.KeyLock;
 import cn.sayjava.keylock.model.LockContext;
 import cn.sayjava.keylock.util.LockStack;
 import cn.sayjava.keylock.util.LockUtils;
@@ -36,7 +36,7 @@ public class LockAspect {
         }
     };
 
-    @Pointcut("@annotation(cn.sayjava.keylock.annotation.AutoLock)")
+    @Pointcut("@annotation(cn.sayjava.keylock.annotation.KeyLock)")
     public void pointCut() {
     }
 
@@ -44,12 +44,12 @@ public class LockAspect {
      * 切面前置处理，使用redis锁处理并发请求
      *
      * @param joinPoint 封装了代理方法信息的对象
-     * @param autoLock 锁注解
+     * @param keyLock 锁注解
      */
-    @Before("pointCut()&&@annotation(autoLock)")
-    public void preHandle(JoinPoint joinPoint, AutoLock autoLock) {
-        autoLock = AnnotationUtils.getAnnotation(autoLock, AutoLock.class);
-        LockContext context = LockAspectUtils.buildContext(joinPoint, autoLock);
+    @Before("pointCut()&&@annotation(keyLock)")
+    public void preHandle(JoinPoint joinPoint, KeyLock keyLock) {
+        keyLock = AnnotationUtils.getAnnotation(keyLock, KeyLock.class);
+        LockContext context = LockAspectUtils.buildContext(joinPoint, keyLock);
         LockStack contextStack = LOCK_THREAD.get();
 
         //尝试加锁

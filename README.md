@@ -27,7 +27,7 @@ redis分布式锁，基于springboot2使用
 ```   
 2. 注解示例
 ```
-@AutoLock("#s.id+#t.id+#name")
+@KeyLock("#s.id+#t.id+#name")
 public void demo(Student s，Teacher t, String name){
     //TODO
 }

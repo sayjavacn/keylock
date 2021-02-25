@@ -14,14 +14,14 @@ import java.lang.annotation.*;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface AutoLock {
+public @interface KeyLock {
 
     @AliasFor("key")
     String value() default "";
     /**
      * 生成rediskey规则，使用SpringEL表达式，如无指定则默认锁定方法
-     * 注解：@AutoLock(key="#s.name+#s.name")
-     * 加前缀：@AutoLock(key="'前缀'+#s.name+#s.name")
+     * 注解：@KeyLock(key="#s.name+#s.name")
+     * 加前缀：@KeyLock(key="'前缀'+#s.name+#s.name")
      * @return 返回KEY值
      */
     @AliasFor("value")

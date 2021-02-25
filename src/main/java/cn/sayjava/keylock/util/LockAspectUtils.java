@@ -1,6 +1,6 @@
 package cn.sayjava.keylock.util;
 
-import cn.sayjava.keylock.annotation.AutoLock;
+import cn.sayjava.keylock.annotation.KeyLock;
 import cn.sayjava.keylock.exception.LockException;
 import cn.sayjava.keylock.model.LockContext;
 import org.aspectj.lang.JoinPoint;
@@ -30,10 +30,10 @@ public class LockAspectUtils {
      * 构建切面上下文
      *
      * @param joinPoint 封装了代理方法信息的对象
-     * @param autoLock 锁注解
+     * @param keyLock 锁注解
      * @return 返回上下文
      */
-    public static LockContext buildContext(JoinPoint joinPoint, AutoLock autoLock) {
+    public static LockContext buildContext(JoinPoint joinPoint, KeyLock keyLock) {
         //获取方法形参
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
@@ -42,8 +42,8 @@ public class LockAspectUtils {
         //获取方法入参
         Object[] parameterValues = joinPoint.getArgs();
 
-        String key = generateKey(method, parameterNames, parameterValues, autoLock.key());
-        return LockContext.builder().key(key).waitSecond(autoLock.waitSecond()).leaseSecond(autoLock.leaseSecond()).message(autoLock.message()).root(method.getClass().getName() + "." + method.getName()).build();
+        String key = generateKey(method, parameterNames, parameterValues, keyLock.key());
+        return LockContext.builder().key(key).waitSecond(keyLock.waitSecond()).leaseSecond(keyLock.leaseSecond()).message(keyLock.message()).root(method.getClass().getName() + "." + method.getName()).build();
     }
 
     /**
@@ -71,7 +71,7 @@ public class LockAspectUtils {
             byte[] mdBytes = md.digest(key.getBytes());
             return KEY_PREFIX + DatatypeConverter.printHexBinary(mdBytes);
         } catch (NoSuchAlgorithmException e) {
-            throw new LockException("Auto lock key encrypt fail by MD5", e);
+            throw new LockException("Key lock key encrypt fail by MD5", e);
         }
     }
 
