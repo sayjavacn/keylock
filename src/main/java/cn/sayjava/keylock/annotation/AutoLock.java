@@ -1,4 +1,4 @@
-package com.boot4j.autolock.annotation;
+package cn.sayjava.keylock.annotation;
 
 
 import org.springframework.core.annotation.AliasFor;

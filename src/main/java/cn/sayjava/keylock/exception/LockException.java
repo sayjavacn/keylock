@@ -1,4 +1,4 @@
-package com.boot4j.autolock.exception;
+package cn.sayjava.keylock.exception;
 
 /**
  * 锁异常类

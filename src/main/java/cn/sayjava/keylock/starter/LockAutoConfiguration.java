@@ -1,4 +1,4 @@
-package com.boot4j.autolock.starter;
+package cn.sayjava.keylock.starter;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @since 2021/02/04
  */
 @Configuration
-@ComponentScan("com.boot4j.autolock")
+@ComponentScan("cn.sayjava.keylock")
 @EnableAspectJAutoProxy
 public class LockAutoConfiguration implements ApplicationContextAware {
 

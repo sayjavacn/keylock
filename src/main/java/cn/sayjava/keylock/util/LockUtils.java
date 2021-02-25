@@ -1,7 +1,7 @@
-package com.boot4j.autolock.util;
+package cn.sayjava.keylock.util;
 
-import com.boot4j.autolock.exception.LockException;
-import com.boot4j.autolock.starter.LockAutoConfiguration;
+import cn.sayjava.keylock.starter.LockAutoConfiguration;
+import cn.sayjava.keylock.exception.LockException;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 

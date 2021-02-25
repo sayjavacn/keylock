@@ -1,8 +1,8 @@
-package com.boot4j.autolock.util;
+package cn.sayjava.keylock.util;
 
-import com.boot4j.autolock.annotation.AutoLock;
-import com.boot4j.autolock.exception.LockException;
-import com.boot4j.autolock.model.LockContext;
+import cn.sayjava.keylock.annotation.AutoLock;
+import cn.sayjava.keylock.exception.LockException;
+import cn.sayjava.keylock.model.LockContext;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.DefaultParameterNameDiscoverer;

@@ -1,6 +1,6 @@
-package com.boot4j.autolock.util;
+package cn.sayjava.keylock.util;
 
-import com.boot4j.autolock.model.LockContext;
+import cn.sayjava.keylock.model.LockContext;
 
 import java.util.ArrayList;
 

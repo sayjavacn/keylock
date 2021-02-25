@@ -1,4 +1,4 @@
-package com.boot4j.autolock.model;
+package cn.sayjava.keylock.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

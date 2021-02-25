@@ -20,7 +20,7 @@ redis分布式锁，基于springboot2使用
 1. 引用依赖包
 ```
 <dependency>
-    <groupId>com.sayjavacn</groupId>
+    <groupId>cn.sayjava</groupId>
     <artifactId>keylock</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 </dependency>    

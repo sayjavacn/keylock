@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.boot4j.autolock.starter.LockAutoConfiguration
+cn.sayjava.keylock.starter.LockAutoConfiguration

@@ -1,11 +1,11 @@
-package com.boot4j.autolock.aspect;
+package cn.sayjava.keylock.aspect;
 
-import com.boot4j.autolock.annotation.AutoLock;
-import com.boot4j.autolock.exception.LockException;
-import com.boot4j.autolock.model.LockContext;
-import com.boot4j.autolock.util.LockUtils;
-import com.boot4j.autolock.util.LockAspectUtils;
-import com.boot4j.autolock.util.LockStack;
+import cn.sayjava.keylock.annotation.AutoLock;
+import cn.sayjava.keylock.model.LockContext;
+import cn.sayjava.keylock.util.LockStack;
+import cn.sayjava.keylock.util.LockUtils;
+import cn.sayjava.keylock.exception.LockException;
+import cn.sayjava.keylock.util.LockAspectUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -36,7 +36,7 @@ public class LockAspect {
         }
     };
 
-    @Pointcut("@annotation(com.boot4j.autolock.annotation.AutoLock)")
+    @Pointcut("@annotation(cn.sayjava.keylock.annotation.AutoLock)")
     public void pointCut() {
     }
 
